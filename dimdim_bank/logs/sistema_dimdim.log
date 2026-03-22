@@ -1,0 +1,5 @@
+2025-01-28 09:15:32 [INFO] Sistema DimDim iniciado com sucesso
+2025-01-28 09:16:45 [INFO] Módulo de transações carregado
+2025-01-28 09:17:12 [ERROR] Falha na conexão com banco de dados
+2025-01-28 09:18:00 [INFO] Reconexão com banco estabelecida
+2025-01-28 09:20:15 [WARN] Alto volume de transações detectado

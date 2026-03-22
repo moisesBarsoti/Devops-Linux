@@ -1,0 +1,4 @@
+2025-01-28 10:15:30 API_CALL transfer amount=200.00 from=12345-6 to=98765-4
+2025-01-28 10:16:45 API_CALL deposit amount=500.00 account=45678-9
+2025-01-28 10:18:22 API_CALL withdrawal amount=100.00 account=12345-6
+2025-01-28 10:25:15 API_CALL pix amount=150.00 from=98765-4 to=45678-9

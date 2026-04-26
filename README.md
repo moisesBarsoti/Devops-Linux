@@ -161,11 +161,23 @@ http://137.131.182.41:8080/api/clientes
 }
 ```
 ---
-### 📌 Observação
+## 📌 Observação
 
-Durante o desenvolvimento:
+Durante o desenvolvimento e deploy da aplicação, foram enfrentados alguns desafios relacionados à infraestrutura e desempenho da VM utilizada:
 
-❌ Uso inicial de MySQL em container causou lentidão <br />
-❌ VM gratuita não suportava múltiplos serviços pesados <br />
-✅ Solução: migração para H2 em memória <br />
-✅ Uso de Docker para padronização <br />
+❌ Inicialmente, foi adotado o uso de **MySQL em container Docker**, porém isso gerou alto consumo de recursos (CPU e memória), impactando diretamente na performance da aplicação.
+
+❌ A utilização simultânea de múltiplos containers (API + banco de dados) em uma **VM gratuita da Oracle Cloud (Always Free)** mostrou-se limitada, ocasionando lentidão, falhas de conexão e dificuldade na inicialização completa da aplicação.
+
+🔍 Foi identificado que o principal gargalo estava na limitação de recursos da máquina, e não necessariamente na aplicação em si.
+
+---
+
+### ✅ Solução adotada
+
+Para contornar esse problema, foram tomadas as seguintes decisões:
+
+- 🔄 Substituição do MySQL pelo **H2 Database em memória**, reduzindo drasticamente o consumo de recursos
+- ⚡ Execução mais rápida da aplicação, eliminando dependência de serviços externos
+- 🐳 Manutenção do uso de **Docker** apenas para padronização do ambiente da API
+- 📦 Simplificação da arquitetura para garantir estabilidade na VM

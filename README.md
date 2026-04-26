@@ -31,6 +31,12 @@ Esta aplicação foi desenvolvida como parte do CP2 com foco em:
 
 ### 🐳 Docker
 
+Conectar na VM
+```
+ssh ubuntu@137.131.182.41
+```
+--
+
 Subir Aplicação
 ```
 sudo docker compose up -d
@@ -45,10 +51,15 @@ sudo docker logs -f api-cp
 --
 
 Testar na VM
+Health
+```
+curl http://localhost:8080
+```
+Produtos
 ```
 curl http://localhost:8080/api/produtos
 ```
-ou
+Clientes
 ```
 curl http://localhost:8080/api/clientes
 ```

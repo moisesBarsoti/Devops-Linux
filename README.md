@@ -4,6 +4,18 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de **clientes**
 
 ---
 
+## 📚 Índice
+
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Tecnologias](#-tecnologias-utilizadas)
+- [Docker](#-docker)
+- [API Online](#-api-online)
+- [Endpoints](#-endpoints)
+- [Exemplos de Requisição](#-exemplos-de-requisição)
+- [Observação](#-observação)
+
+---
+
 ## 📌 Sobre o Projeto
 
 Esta aplicação foi desenvolvida como parte do CP2 com foco em:
@@ -29,28 +41,36 @@ Esta aplicação foi desenvolvida como parte do CP2 com foco em:
 
 ---
 
-### 🐳 Docker
+## 🐳 Docker
 
-Conectar na VM
+1º Conectar na VM
 ```
 ssh ubuntu@137.131.182.41
 ```
 --
 
-Subir Aplicação
+2º Verifique se o container está rodando
+
+<img width="1372" height="54" alt="image" src="https://github.com/user-attachments/assets/cbc5d8d0-9647-4c31-8fbd-fe8b5a711f82" />
+
+```
+sudo docker ps
+```
+
+Caso não esteja rodando suba a aplicação
+
 ```
 sudo docker compose up -d
 ```
---
 
-Ver logs
+Veja os logs do container executando
 ```
 sudo docker logs -f api-cp
 ```
 
 --
 
-Testar na VM
+Testar endpoints na VM
 
 Health
 ```

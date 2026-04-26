@@ -48,7 +48,10 @@ Testar na VM
 ```
 curl http://localhost:8080/api/produtos
 ```
-
+ou
+```
+curl http://localhost:8080/api/clientes
+```
 ---
 
 ## 🌐 API Online

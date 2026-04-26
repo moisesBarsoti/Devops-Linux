@@ -7,7 +7,7 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de **clientes**
 ## 📚 Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
-- [Tecnologias](#-tecnologias-utilizadas)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Docker](#-docker)
 - [API Online](#-api-online)
 - [Endpoints](#-endpoints)

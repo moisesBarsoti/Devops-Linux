@@ -159,15 +159,3 @@ http://137.131.182.41:8080/api/clientes
   "endereco": "Rua"
 }
 ```
----
-## 📌 Observação
-
-Durante o desenvolvimento e deploy da aplicação, foram enfrentados alguns desafios relacionados à infraestrutura e desempenho da VM utilizada:
-
-❌ Inicialmente, foi adotado o uso de **MySQL em container Docker**, porém isso gerou alto consumo de recursos (CPU e memória), impactando diretamente na performance da aplicação.
-
-❌ A utilização simultânea de múltiplos containers (API + banco de dados) em uma **VM gratuita da Oracle Cloud (Always Free)** mostrou-se limitada, ocasionando lentidão, falhas de conexão e dificuldade na inicialização completa da aplicação.
-
-🔍 Foi identificado que o principal gargalo estava na limitação de recursos da máquina, e não necessariamente na aplicação em si.
-
----

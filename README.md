@@ -34,7 +34,7 @@ Esta aplicação foi desenvolvida como parte do CP2 com foco em:
 - Spring Web
 - Spring Data JPA
 - Bean Validation
-- H2 Database (produção leve)
+- MySQL
 - Docker / Docker Compose
 - Oracle Cloud (VM Ubuntu)
 

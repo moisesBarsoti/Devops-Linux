@@ -12,7 +12,6 @@ API REST desenvolvida em Java com Spring Boot para gerenciamento de **clientes**
 - [API Online](#-api-online)
 - [Endpoints](#-endpoints)
 - [Exemplos de Requisição](#-exemplos-de-requisição)
-- [Observação (Muito importante)](#-observação)
 
 ---
 

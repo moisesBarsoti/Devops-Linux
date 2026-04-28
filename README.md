@@ -172,12 +172,3 @@ Durante o desenvolvimento e deploy da aplicação, foram enfrentados alguns desa
 🔍 Foi identificado que o principal gargalo estava na limitação de recursos da máquina, e não necessariamente na aplicação em si.
 
 ---
-
-### ✅ Solução adotada
-
-Para contornar esse problema, foram tomadas as seguintes decisões:
-
-- 🔄 Substituição do MySQL pelo **H2 Database em memória**, reduzindo drasticamente o consumo de recursos
-- ⚡ Execução mais rápida da aplicação, eliminando dependência de serviços externos
-- 🐳 Manutenção do uso de **Docker** apenas para padronização do ambiente da API
-- 📦 Simplificação da arquitetura para garantir estabilidade na VM

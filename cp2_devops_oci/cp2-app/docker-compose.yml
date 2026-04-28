@@ -1,52 +1,33 @@
-version: '3.8'
-
 services:
-  # ==========================
-  # Container MySQL
-  # ==========================
-  mysql:
-    image: mysql:8.0
-    container_name: cp2-mysql
-    restart: always
+  mysql-cp:
+    image: mysql:8
+    container_name: mysql-cp
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: cp2db
-      MYSQL_USER: fiap
-      MYSQL_PASSWORD: fiap123
+      MYSQL_ROOT_PASSWORD: 030705
+      MYSQL_DATABASE: cpdb
+      MYSQL_USER: app
+      MYSQL_PASSWORD: 030705
+    command: >
+      --performance-schema=OFF
+      --innodb-buffer-pool-size=64M
+      --max-connections=20
     ports:
       - "3306:3306"
     volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
       - mysql_data:/var/lib/mysql
-    networks:
-      - cp2-network
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot123"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
-  # ==========================
-  # Container da Aplicação Java
-  # ==========================
-  app:
+  api-cp:
     build: .
-    container_name: cp2-app
-    restart: always
+    container_name: api-cp
+    depends_on:
+      - mysql-cp
+    environment:
+      DB_URL: jdbc:mysql://mysql-cp:3306/cpdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo
+      DB_USERNAME: app
+      DB_PASSWORD: 030705
     ports:
       - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/cp2db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root123
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - cp2-network
 
 volumes:
   mysql_data:
-
-networks:
-  cp2-network:
-    driver: bridge
